@@ -1,0 +1,13 @@
+body{
+    margin:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+.banner{
+    background: linear-gradient(135deg, rgb(44, 150, 255, #ff8dec));
+    color:aliceblue;
+    text-align: center;
+    padding: 50px 20px;
+}
