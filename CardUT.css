@@ -1,0 +1,231 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+body{
+    font-family: monospace;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+/*herencia con */
+.grid-container > *{
+    padding: 10px;
+    text-align: center;
+}
+
+/*Definir la estructura de css*/
+.grid-container{
+    display: grid;
+
+    /*Nombrar las areas*/
+    grid-template-areas:
+    "header"
+    "navbar"
+    "main"
+    "footer"
+   
+    ;
+}
+
+/*Unir area con los contenedores*/
+.header{
+    grid-area: header;
+    background-color: rgb(12, 170, 46);
+    background-image: url(imagenesUT/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px 100px;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.main{
+    grid-area: main;
+    background-color: rgb(182, 181, 181);
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+/* --- NUEVOS ESTILOS PARA LA CREDENCIAL INTERACTIVA --- */
+
+.cont_tarjeta {
+    /* El contenedor que ahora simula ser la credencial */
+    width: 350px; 
+    height: 220px; /* Tamaño típico de una credencial */
+    background: linear-gradient(to right, #00A651 30%, #4CAF50); /* Fondo con gradiente */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.foto-previa {
+    width: 349px;
+    height: 190px;
+    background-color: #f0f0f0; /* Fondo gris claro para la foto */
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-right: 15px;
+    /* Centrar texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Asegura que la imagen subida no se desborde */
+}
+
+.foto-previa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la imagen cubra el área sin distorsionarse */
+}
+
+.Credencial {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Estilo para el botón de subida */
+.Subir_foto {
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #00A651;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.upload-button:hover {
+    background-color: #00803c;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(42, 245, 86);
+    padding: 15px 20px; 
+    
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;    /* Centrado vertical */
+    position: relative;
+}
+.instagram-links-container {
+    /* Usamos Grid para organizar los 4 elementos en 2 columnas */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px 30px; 
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+.reprecentantes {
+    display: flex;
+    align-items: center; 
+}
+.nombre {
+    font-size: 1rem;
+    font-weight: 500; 
+    margin-right: 10px; 
+    white-space: nowrap; 
+}
+.icono-instagram {
+    width: 25px; 
+    height: 25px;
+    vertical-align: middle; 
+    /* Efecto para cuando se pasa el mouse */
+    transition: transform 0.2s ease-in-out; 
+    cursor: pointer;
+}
+.icono-instagram:hover {
+    transform: scale(1.1); /* Agranda el ícono al pasar el mouse */
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.navbar{
+    grid-area: navbar;
+    background-color: rgb(6, 109, 12);
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.nav-button {
+    width: 80%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    text-align: center;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: #080ba5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (min-width:480px) {
+    .grid-container{
+        
+    /*Tamaños personalizados*/
+    grid-template-columns: 50px auto;
+    grid-template-rows: 80px auto 50px;
+
+    grid-template-areas: 
+    "navbar header"
+    "navbar main"
+    "navbar footer"
+    ;
+    } 
+}
+
+
+/*Crear una pagina responsiva @media() Es similar a un if*/
+@media (min-width:900px) {
+    .grid-container{
+    /*Tamaños personalizados*/ 
+    grid-template-columns: 50px auto;
+    grid-template-rows: 90px auto 120px;
+
+    grid-template-areas: 
+    "navbar header"
+    "navbar main"
+    "navbar footer"
+    
+    ;
+    }
+}
+
+@media (min-width:1200px){
+    .grid-container{
+    grid-template-columns: 150px auto;
+    grid-template-rows: 100px auto 90px;
+
+    grid-template-areas: 
+    "navbarheader"
+    "navbar main"
+    "navbar footer";
+    }
+    
+    
+}
+
+

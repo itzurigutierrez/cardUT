@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <!-- Creacion de enlace externo -->
+    <link rel="stylesheet" href="CardUT.css">
+</head>
+<body class="grid-container">
+
+    <header class="header"></header>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <img src="imagenesUT/logout.png" alt="Logo de UTCJ" class="logoUT" width="120px" height="70px">
+        </div>
+        <a href="CardUT.html" class="nav-button">Credencial</a>
+        <a href="horario.html" class="nav-button">Horario</a>
+    </nav>
+    
+    <section class="main">
+        <div class="contenedor-calendario">
+        <h2>Calendario de Pendientes</h2>
+        
+        <div class="encabezado-calendario">
+            <button id="mes-anterior"> &lt; </button>
+            <h3 id="mes-anio">Octubre 2025</h3>
+            <button id="mes-siguiente"> &gt; </button>
+        </div>
+        
+        <table id="tabla-calendario">
+            <thead>
+                <tr>
+                    <th>Dom</th><th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fuera-mes"></td><td class="fuera-mes"></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                </tr>
+                <tr>
+                    <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+                </tr>
+                <tr>
+                    <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+                </tr>
+                <tr>
+                    <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+                </tr>
+                <tr>
+                    <td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="fuera-mes"></td><td class="fuera-mes"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modal-tarea" class="modal">
+        <div class="contenido-modal">
+            <span class="boton-cerrar">&times;</span>
+            <h4>Pendiente para el día: <span id="texto-fecha-seleccionada"></span></h4>
+            
+            <textarea id="entrada-tarea" placeholder="Ingresa tu pendiente..." rows="3"></textarea>
+            
+            <div class="opciones-prioridad">
+                <label>Prioridad:</label>
+                <div class="opciones-color">
+                    <input type="radio" id="verde" name="prioridad" value="verde" checked><label for="verde" class="etiqueta-color verde"></label>
+                    <input type="radio" id="amarillo" name="prioridad" value="amarillo"><label for="amarillo" class="etiqueta-color amarillo"></label>
+                    <input type="radio" id="rojo" name="prioridad" value="rojo"><label for="rojo" class="etiqueta-color rojo"></label>
+                </div>
+            </div>
+            <button id="guardar-tarea">Aceptar</button>
+        </div>
+    </div>
+    </section>
+    <footer class="footer">
+        <div class="instagram-links-container">
+            <div class="reprecentantes">
+                <span class="nombre">Barraza Ramirez Abel Andrés</span>
+                <a href="https://www.instagram.com/abelatzo" target="_blank" rel="noopener noreferrer">
+                    <img src="imagenesUT/insta.png" alt="Instagram de Abel" class="icono-instagram">
+                </a>
+            </div>
+            <div class="reprecentantes">
+                <span class="nombre">Lucero Navarrete Miguel Ángel</span>
+                <a href="https://www.instagram.com/migue_skx8" target="_blank" rel="noopener noreferrer">
+                    <img src="imagenesUT/insta.png" alt="Instagram de Miguel" class="icono-instagram">
+                </a>
+            </div>
+            <div class="reprecentantes">
+                <span class="nombre">Gutiérrez Delgado Itzuri</span>
+                <a href="https://www.instagram.com/apple.miffyy" target="_blank" rel="noopener noreferrer">
+                    <img src="imagenesUT/insta.png" alt="Instagram de Itzuri" class="icono-instagram">
+                </a>
+            </div>
+            <div class="reprecentantes">
+                <span class="nombre">Gonzalez Camacho David Osiel</span>
+                <a href="https://www.instagram.com/deyvid_ogc" target="_blank" rel="noopener noreferrer">
+                    <img src="imagenesUT/insta.png" alt="Instagram de David" class="icono-instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+     <!-- TODOS LOS ELEMENTOS CREADOS SON ELEMTNOS HIJOS -->
+            
+</body>
+</html>

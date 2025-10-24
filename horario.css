@@ -1,0 +1,184 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+body{
+    font-family: monospace;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+/*herencia con */
+.grid-container > *{
+    padding: 10px;
+    text-align: center;
+}
+
+/*Definir la estructura de css*/
+.grid-container{
+    display: grid;
+
+    /*Nombrar las areas*/
+    grid-template-areas:
+    "header"
+    "navbar"
+    "main"
+    "footer"
+   
+    ;
+}
+
+/*Unir area con los contenedores*/
+.header{
+    grid-area: header;
+    background-color: rgb(12, 170, 46);
+    background-image: url(imagenesUT/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px 100px;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+/* CENTRADO DE LA SECCIÓN PRINCIPAL GRID */
+.main {
+    grid-area: main;
+    background-color: rgb(182, 181, 181); /* Fondo gris del área de contenido */
+    
+    /* PROPIEDADES CLAVE PARA CENTRAR EL CONTENIDO INTERNO */
+    display: flex;
+    flex-direction: column;         /* Apila los elementos (título, tabla) verticalmente */
+    justify-content: flex-start;    /* Alinea el contenido desde la parte superior */
+    align-items: center;            /* Centra horizontalmente el contenido (ej. el contenedor-horario) */
+    
+    padding-top: 50px;              /* Separación del título con el header superior */
+    padding-bottom: 50px;
+    overflow: auto;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(42, 245, 86);
+    padding: 15px 20px; 
+    
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;    /* Centrado vertical */
+    position: relative;
+}
+.instagram-links-container {
+    /* Usamos Grid para organizar los 4 elementos en 2 columnas */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px 30px; 
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+.reprecentantes {
+    display: flex;
+    align-items: center; 
+}
+.nombre {
+    font-size: 1rem;
+    font-weight: 500; 
+    margin-right: 10px; 
+    white-space: nowrap; 
+}
+.icono-instagram {
+    width: 25px; 
+    height: 25px;
+    vertical-align: middle; 
+    /* Efecto para cuando se pasa el mouse */
+    transition: transform 0.2s ease-in-out; 
+    cursor: pointer;
+}
+.icono-instagram:hover {
+    transform: scale(1.1); /* Agranda el ícono al pasar el mouse */
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.navbar{
+    grid-area: navbar;
+    background-color: rgb(6, 109, 12);
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.nav-button {
+    width: 80%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    text-align: center;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: #080ba5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (min-width:480px) {
+    .grid-container{
+        
+    /*Tamaños personalizados*/
+    grid-template-columns: 50px auto;
+    grid-template-rows: 80px auto 50px;
+
+    grid-template-areas: 
+    "navbar header"
+    "navbar main"
+    "navbar footer"
+    ;
+    } 
+}
+
+
+/*Crear una pagina responsiva @media() Es similar a un if*/
+@media (min-width:900px) {
+    .grid-container{
+    /*Tamaños personalizados*/ 
+    grid-template-columns: 50px auto;
+    grid-template-rows: 90px auto 120px;
+
+    grid-template-areas: 
+    "navbar header"
+    "navbar main"
+    "navbar footer"
+    
+    ;
+    }
+}
+
+@media (min-width:1200px){
+    .grid-container{
+    grid-template-columns: 150px auto;
+    grid-template-rows: 100px auto 90px;
+
+    grid-template-areas: 
+    "navbar header"
+    "navbar main"
+    "navbar footer";
+    }
+    
+    
+}
+
+

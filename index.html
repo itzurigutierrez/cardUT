@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDUT CSS</title>
+    <!-- Creacion de enlace externo -->
+    <link rel="stylesheet" href="CardUT.css">
+</head>
+<body class="grid-container">
+
+    <header class="header"></header>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <img src="CardUT.png" alt="Logo de UTCJ" class="logoUT" width="120px" height="70px">
+        </div>
+        <a href="#" class="nav-button">Calendario</a>
+        <a href="#" class="nav-button">Horario</a>
+    </nav>
+    <section class="main">
+        <div class="card-container">
+        <div class="cont_tarjeta">
+            <div id="photoPreviewArea" class="photo-preview">
+                <span class="placeholder-text">Credencial</span>
+            </div>
+        </div>
+        
+        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+        <button onclick="document.getElementById('photoUpload').click()" class="Subir_foto" >Subir Foto</button>
+        </div>
+    </section>
+    <footer class="footer">f</footer>
+            
+</body>
+</html>
