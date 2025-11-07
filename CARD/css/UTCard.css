@@ -1,0 +1,161 @@
+/* --- ESTILOS GENERALES --- */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-size: 1.4rem;
+  margin: 0 auto;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-btn {
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 220px;
+  background-color: #222;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: 60px;
+  transition: transform 0.3s ease;
+  z-index: 900;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background-color: #0cab3d;
+}
+
+/* --- CONTENIDO --- */
+.content {
+  flex: 1;
+  margin-left: 220px;
+  padding: 40px;
+  transition: margin-left 0.3s ease;
+}
+
+.white-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer a {
+  color: #0cab3d;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 991px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .menu-toggle:checked ~ .sidebar {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .menu-toggle:checked ~ .overlay {
+    display: block;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 800;
+  }
+}
+
+img, table {
+  max-width: 100%;
+  height: auto;
+}
+
+.table th {
+  background-color: #0cab3d;
+  color: white;
+}

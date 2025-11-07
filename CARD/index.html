@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio - CardUT</title>
+  <link rel="stylesheet" href="css/UTCard.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Checkbox oculto -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <label for="menu-toggle" class="menu-btn"><i class="fa fa-bars"></i></label>
+      <h1>CardUT</h1>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="Credencial.html"><i class="fa fa-id-card"></i> Credencial</a></li>
+        <li><a href="Horario.html"><i class="fa fa-calendar"></i> Horario</a></li>
+        <li><a href="Calendario.html"><i class="fa fa-calendar-o"></i> Calendario</a></li>
+        <li><a href="login.html"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+      </ul>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Contenido -->
+    <main class="content">
+      <div class="white-box text-center">
+        <h2>Bienvenido a CardUT</h2>
+        <p>Selecciona una opción del menú lateral.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CardUT - Universidad Tecnológica</p>
+    <p>Contacto: <a href="mailto:soporte@cardut.mx">soporte@cardut.mx</a> | Tel: (555) 123-4567</p>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const overlay = document.querySelector(".overlay");
+    const links = document.querySelectorAll(".sidebar a");
+
+    // 🔹 Asegurarse de que el menú esté cerrado al cargar la página
+    if (menuToggle) {
+      menuToggle.checked = false;
+    }
+
+    // 🔹 Cerrar menú al hacer clic en un enlace
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        // Cerrar inmediatamente
+        menuToggle.checked = false;
+
+        // Esperar un poco antes de navegar para evitar parpadeo (opcional)
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 50);
+
+        // Evita que el enlace se ejecute antes de tiempo
+        event.preventDefault();
+      });
+    });
+
+    // 🔹 Cerrar menú al hacer clic en el overlay
+    if (overlay) {
+      overlay.addEventListener("click", () => {
+        menuToggle.checked = false;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
